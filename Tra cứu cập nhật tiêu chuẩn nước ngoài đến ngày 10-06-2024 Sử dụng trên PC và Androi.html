@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuỳ chọn tiêu chuẩn cần tra tại đây</title>
+    <style>
+        /* CSS cho menu dropdown */
+        .dropdown {
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 15px;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 1000px; /* Điều chỉnh kích thước iframe tùy ý */
+        }
+
+        .image-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 60%;
+            height: auto;
+        }
+
+        .wave-text {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(90deg, purple, skyblue, purple);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: wave 30s infinite linear, colorchange 1s infinite linear;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes colorchange {
+            0%, 100% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 100% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+                <!-- Thêm các tuỳ chọn khác ở đây -->
+        </select>
+    </div>
+
+    <div class="wave-text">Hội Nhóm Thí Nghiệm Và Kiểm Định LAS Xây Dựng Việt Nam</div>
+
+    <div class="image-container">
+        <img src="https://scontent.fhan4-3.fna.fbcdn.net/v/t39.30808-6/291677578_380091270857766_2672214645261416420_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=P1-N1YNDKF4Q7kNvgFZoDXm&_nc_ht=scontent.fhan4-3.fna&oh=00_AYB3wTXf0dWv--rWjuI6sqLjLhTlKMo63o6W5cTiLbwe5g&oe=666F9AFA" alt="Mô tả ảnh">
+    </div>
+
+    <script>
+        function showTable() {
+            var tableSelect = document.getElementById('tableSelect');
+            var value = tableSelect.value;
+            // Thêm mã JavaScript để xử lý thay đổi và hiển thị bảng ở đây
+        }
+    </script>
+</body>
+    <div class="dropdown">
+        <label for="tableSelect">Tuỳ chọn tiêu chuần cần tra tại đây:</label>
+        <select id="tableSelect" onchange="showTable()">
+            <option value="">Click vào mũi tên bên cạnh</option>
+            <option value="https://script.google.com/macros/s/AKfycbwJHs8SxREyO4iHH4kxw5UuvqxqT5pj2InbzWe8cFCBGjjh8g04kyBGe6pO8LqDb-lJog/exec">JIS ( Đã dịch sang tiếng anh)</option>
+            <option value="https://script.google.com/macros/s/AKfycbx4MacfsVtVX5VUNlft7Unmxc3YYbulJR6OuCDDDt_DO_5mlamTxibv5l2VpS6seodO/exec">ASTM</option>
+            <option value="https://script.google.com/macros/s/AKfycbyDkna-cEScxoKIJ6YKtSL0TEbpuGQWiMt0jL9sI_RSj4uQj_BdluDYcGKKrW5zaXhyXQ/exec">AASHTO</option>
+            <option value="https://script.google.com/macros/s/AKfycbyfHxaxUzr3YRKNxJJnnXg55zktx3-vt92eoteYMo4l6ZK1olTAL0JZA9PhIZlD3Fe1Ow/exec">BS EN</option>
+            <option value="https://script.google.com/macros/s/AKfycbzmraNRpEEsGSn61pPnK27G0OXGcPKoGDkuP7MRSVaCnz5jKhtgul6ExkMlHMnyGjux/exec">ISO</option>
+            <option value="https://script.google.com/macros/s/AKfycbxZff6FWAnaeKrTw44o_4EDS37xpykKeG6y70D1G6xhKKnb0RSij16njyYc8KqyiACz/exec">ACI</option>
+            <option value="https://script.google.com/macros/s/AKfycbyZMP_epCiv0YcFrkATxaO0DTHj1NH7xi1nQzSGt9H5ZC4EVM52EwwNtp8lFh2tAgc-lA/exec">DIN</option>
+        </select>
+
+    </div>
+
+    <iframe id="tableFrame" style="display: none;"></iframe>
+
+    <script>
+        function showTable() {
+            var select = document.getElementById("tableSelect");
+            var selectedOption = select.options[select.selectedIndex];
+            var iframe = document.getElementById("tableFrame");
+            iframe.src = selectedOption.value;
+            iframe.style.display = "block";
+        }
+
+        function goBack() {
+            var select = document.getElementById("tableSelect");
+            select.selectedIndex = 0; // Thiết lập dropdown về giá trị mặc định
+            var iframe = document.getElementById("tableFrame");
+            iframe.style.display = "none"; // Ẩn iframe
+        }
+    </script>
+</body>
+</html>
